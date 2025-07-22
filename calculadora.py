@@ -1,4 +1,5 @@
 sales_list=[]
+
 while True:
     print("\n-----MENÚ DE ANÁLISIS DE VENTAS-----")
 
@@ -14,16 +15,18 @@ while True:
 
     match option:
         case "1":
+            num_sale=input("Cuantos días desea ingresar: ")
 
-            num_sale=input("Cuantas día desea ingresar: ")
-
-            if num_sale>0:
-                for i in range(num_sale+1):
-
+            if num_sale.isdigit() and int(num_sale)>0:
+                num_sale=int(num_sale)
+                i=1
+                while num_sale != 0:
                     ingresar_venta=input(f"Ingresar un valor de venta del día {i}: ")
 
-                    if ingresar_venta>=0:
-                        sales_list.append(ingresar_venta)
+                    if ingresar_venta.isdigit() and int(ingresar_venta)>=0:
+                        sales_list.append(int(ingresar_venta))
+                        num_sale -= 1
+                        i+=1
                     else:
                         print("La cantidad no es válida")
             else:
