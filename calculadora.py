@@ -15,11 +15,20 @@ while True:
     match option:
         case "1":
 
-                num_sale=int(input("Cuantas día desea ingresar: "))
+            num_sale=input("Cuantas día desea ingresar: ")
 
+            if num_sale>0:
                 for i in range(num_sale+1):
-                    ingresar_venta=int(input("Ingresar un valor de venta: "))
-                    sales_list.append(ingresar_venta)
+
+                    ingresar_venta=input(f"Ingresar un valor de venta del día {i}: ")
+
+                    if ingresar_venta>=0:
+                        sales_list.append(ingresar_venta)
+                    else:
+                        print("La cantidad no es válida")
+            else:
+                print("La cantidad no es válida")
+
         case "2":
             print("La ventas ingresadas son: ")
             for i in sales_list:
