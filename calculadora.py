@@ -33,12 +33,14 @@ while True:
                 print("La cantidad no es válida")
 
         case "2":
-
-            print("La ventas ingresadas son: ")
-            sales_in_day=0
-            for i in sales_list:
-                sales_in_day+=1
-                print(f"En el día {sales_in_day} las ventas fueron de Q{i}")
+            if len(sales_list) > 0:
+                print("La ventas ingresadas son: ")
+                sales_in_day=0
+                for i in sales_list:
+                    sales_in_day+=1
+                    print(f"En el día {sales_in_day} las ventas fueron de Q{i}")
+            else:
+                print("No hay ventas ingresadas")
 
         case "3":
             if len(sales_list)>0:
@@ -56,36 +58,49 @@ while True:
                 print("No hay ventas ingresadas")
 
         case "4":
-            total_sales=0
-            for i in sales_list:
-                total_sales+=i
-            average_sales=total_sales/len(sales_list)
-            print(f"El promedio de las ventas fue de Q{round(average_sales,2)}")
+
+            if len(sales_list) > 0:
+                total_sales=0
+                for i in sales_list:
+                    total_sales+=i
+                average_sales=total_sales/len(sales_list)
+                print(f"El promedio de las ventas fue de Q{round(average_sales,2)}")
+            else:
+                print("No hay ventas ingresadas")
 
         case "5":
-            upper_sale_count=0
-            for i in sales_list:
-                if i>1000:
-                    upper_sale_count+=1
-                else:
-                    continue
-            print(f"En {upper_sale_count} días de supero los Q1000 en ventas")
+
+            if len(sales_list) > 0:
+                upper_sale_count=0
+                for i in sales_list:
+                    if i>1000:
+                        upper_sale_count+=1
+                    else:
+                        continue
+                print(f"En {upper_sale_count} días de supero los Q1000 en ventas")
+            else:
+                print("No hay ventas ingresadas")
 
         case "6":
-            high_sale=[]
-            middle_sale=[]
-            low_sale=[]
-            for i in sales_list:
-                if i>1000:
-                    high_sale.append(i)
-                elif i<=1000 and i>500:
-                    middle_sale.append(i)
-                elif i<=500:
-                    low_sale.append(i)
-            print("Las ventas clasificadas son: ")
-            print(f"Ventas altas: {high_sale}")
-            print(f"Ventas en la media: {middle_sale}")
-            print(f"Ventas bajas: {low_sale}")
+
+            if len(sales_list) > 0:
+                high_sale=[]
+                middle_sale=[]
+                low_sale=[]
+                for i in sales_list:
+                    if i>1000:
+                        high_sale.append(i)
+                    elif i<=1000 and i>500:
+                        middle_sale.append(i)
+                    elif i<=500:
+                        low_sale.append(i)
+                print("Las ventas clasificadas son: ")
+                print(f"Ventas altas: {high_sale}")
+                print(f"Ventas en la media: {middle_sale}")
+                print(f"Ventas bajas: {low_sale}")
+            else:
+                print("No hay ventas ingresadas")
+
         case "7":
             print("\nSaliendo...")
             break
