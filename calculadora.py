@@ -21,7 +21,7 @@ while True:
                 num_sale=int(num_sale)
                 i=1
                 while num_sale != 0:
-                    ingresar_venta=input(f"Ingresar un valor de venta del día {i}: ")
+                    ingresar_venta=input(f"Ingresar un valor de venta {i}: ")
 
                     if ingresar_venta.isdigit() and int(ingresar_venta)>=0:
                         sales_list.append(int(ingresar_venta))
@@ -34,7 +34,12 @@ while True:
 
         case "2":
             print("La ventas ingresadas son: ")
+            sales_in_day=0
             for i in sales_list:
-                print(i)
+                sales_in_day+=1
+                print(f"En el día {sales_in_day} las ventas fueron de Q{i}")
+
+        case "3":
+
 
 
