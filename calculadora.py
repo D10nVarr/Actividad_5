@@ -15,7 +15,6 @@ while True:
     match option:
         case "1":
 
-            while :
                 num_sale=int(input("Cuantas día desea ingresar: "))
 
                 for i in range(num_sale+1):
